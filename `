@@ -1,0 +1,69 @@
+feat: initiate repository
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Sat Jun 8 11:32:11 2024 +0200
+#
+# On branch main
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   .github/workflows/quality.yml
+#	new file:   .gitignore
+#	new file:   Dockerfile
+#	new file:   Dockerfile.dockerignore
+#	new file:   LICENCE
+#	new file:   Makefile
+#	new file:   README.md
+#	new file:   eslint.config.js
+#	new file:   jest.config.js
+#	new file:   next.config.mjs
+#	new file:   package-lock.json
+#	new file:   package.json
+#	new file:   postcss.config.mjs
+#	new file:   prettier.config.js
+#	new file:   public/assets/appicon-capitaine.png
+#	new file:   public/assets/appicon-jterrazz.png
+#	new file:   public/assets/image-top-of-the-hill-smoked.webp
+#	new file:   public/favicon/android-icon-144x144.png
+#	new file:   public/favicon/android-icon-192x192.png
+#	new file:   public/favicon/android-icon-36x36.png
+#	new file:   public/favicon/android-icon-48x48.png
+#	new file:   public/favicon/android-icon-72x72.png
+#	new file:   public/favicon/android-icon-96x96.png
+#	new file:   public/favicon/apple-icon-114x114.png
+#	new file:   public/favicon/apple-icon-120x120.png
+#	new file:   public/favicon/apple-icon-144x144.png
+#	new file:   public/favicon/apple-icon-152x152.png
+#	new file:   public/favicon/apple-icon-180x180.png
+#	new file:   public/favicon/apple-icon-57x57.png
+#	new file:   public/favicon/apple-icon-60x60.png
+#	new file:   public/favicon/apple-icon-72x72.png
+#	new file:   public/favicon/apple-icon-76x76.png
+#	new file:   public/favicon/apple-icon-precomposed.png
+#	new file:   public/favicon/apple-icon.png
+#	new file:   public/favicon/favicon-16x16.png
+#	new file:   public/favicon/favicon-32x32.png
+#	new file:   public/favicon/favicon-96x96.png
+#	new file:   public/favicon/favicon.ico
+#	new file:   src/app/globals.css
+#	new file:   src/app/layout.tsx
+#	new file:   src/app/manifest.ts
+#	new file:   src/app/page.tsx
+#	new file:   src/components/atoms/highlighted-text.module.scss
+#	new file:   src/components/atoms/highlighted-text.tsx
+#	new file:   src/components/atoms/link-button.tsx
+#	new file:   src/components/atoms/status/badge.tsx
+#	new file:   src/components/atoms/status/dot-pulse.module.scss
+#	new file:   src/components/atoms/status/dot-pulse.tsx
+#	new file:   src/components/atoms/typography/heading-main.tsx
+#	new file:   src/components/atoms/typography/heading-section.tsx
+#	new file:   src/components/atoms/typography/heading-sub-section.tsx
+#	new file:   src/components/organisms/main-container.tsx
+#	new file:   src/components/templates/hello-world.template.tsx
+#	new file:   src/lib/utils.ts
+#	new file:   tailwind.config.ts
+#	new file:   tsconfig.json
+#
