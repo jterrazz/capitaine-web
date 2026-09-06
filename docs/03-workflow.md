@@ -1,24 +1,39 @@
 # Workflow
 
-The npm scripts are the real interface; the Makefile wraps them in Docker.
+The npm scripts are the real interface; the Makefile wraps the three CI
+calls around them.
 
 ## Scripts
 
-| Script          | Does                               |
-| --------------- | ---------------------------------- |
-| `npm run dev`   | Next dev server on port 3000       |
-| `npm run build` | Next production build              |
-| `npm run start` | Serves the build                   |
-| `npm run test`  | Jest                               |
-| `npm run lint`  | Type, code and style in sequence   |
-| `npm run clean` | Removes `.next` and `node_modules` |
+| Script             | Does                                              |
+| ------------------ | ------------------------------------------------- |
+| `npm run dev`      | Next dev server on port 3000                      |
+| `npm run build`    | Next production build                             |
+| `npm run start`    | Serves the build                                  |
+| `npm test`         | Vitest — no suite exists yet, so the run is empty |
+| `npm run lint`     | `typescript check`                                |
+| `npm run lint:fix` | `typescript fix`                                  |
+| `npm run clean`    | Removes the build output and `node_modules`       |
 
-`npm run lint` chains `lint:type` (`tsc --noEmit`), `lint:code` (ESLint) and
-`lint:style` (`prettier . --check`). The three are also callable alone.
+`npm run lint` is one command from `@jterrazz/typescript`: types, oxlint,
+oxfmt, the artefact gate and knip in a single pass. What each pass does is
+that package's own documentation, not this chapter's.
 
-The Makefile targets — `build`, `start`, `dev`, `test`, `lint`, `clean` —
-run the same scripts inside a container built from the Dockerfile, with
-`src/` and `__tests__/` mounted.
+## The two local tsconfig lines
+
+`tsconfig.json` extends `@jterrazz/typescript/tsconfig/next` and then
+restates two things the preset already answers, because Next 14 cannot read
+them through an `extends`:
+
+- `include` — Next 14 pushes its generated route types into the `include`
+  array of the file it is handed, and crashes when that file has none of
+  its own.
+- `jsx: preserve` — Next 14 requires it and rewrites the tsconfig on every
+  build until it is there; the preset says `react-jsx`, which Next 15 and
+  later accept.
+
+Both lines go the day this app moves to a Next major that reads the preset,
+and neither is a licence to add a third.
 
 ## CI
 
@@ -26,14 +41,6 @@ One GitHub Actions workflow, `.github/workflows/quality.yml`, on push to
 `main` and `develop`. Two jobs, `make test` and `make lint`, so CI and a
 local run execute the same thing.
 
-## None of it runs today
-
-`npm ci` fails on a lockfile out of sync with `package.json`, and
-`npm install` cannot repair it: the pinned `@jterrazz/package-typescript`,
-`@jterrazz/package-typescript-quality` and
-`@jterrazz/package-typescript-test` are no longer on npm — the family was
-renamed. Verified 2026-09-06.
-
-Reviving the tree means moving to the current packages and regenerating the
-lockfile. Until someone does, the scripts above describe the intent, not a
-working command.
+`Dockerfile` builds a container image of the app. Nothing in this repository
+invokes it — the deploy target is Vercel — and it is kept as the recipe for
+anyone who wants one.

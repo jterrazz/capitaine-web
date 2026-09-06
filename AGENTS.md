@@ -24,7 +24,7 @@ routes; the corpus is `docs/`, and it is not restated here.
 | ------------------------------------ | ---------------------------- |
 | The Next.js app, components, styling | `docs/01-architecture.md`    |
 | The landing page and its copy        | `docs/02-landing-page.md`    |
-| Scripts, Docker, the tests, the CI   | `docs/03-workflow.md`        |
+| Scripts, the toolchain, the CI       | `docs/03-workflow.md`        |
 | What is built, and the names in code | `docs/04-state-and-names.md` |
 | Why a choice was made                | `docs/decisions/`            |
 
@@ -36,8 +36,8 @@ it is the brand corpus in `jterrazz-os`, at `home/capitaine/wiki/`.
 
 ```bash
 npm run dev    # Next dev server on port 3000
-npm run test   # Jest
-npm run lint   # Type, code and style
+npm test       # Vitest — no suite exists yet
+npm run lint   # typescript check
 ```
 
 ## Standing rules

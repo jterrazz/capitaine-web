@@ -10,13 +10,9 @@
 # Dependencies
 /node_modules
 
-# Node.js
-npm-debug.log*
-
-# Build
-/build
-*.tsbuildinfo
-
-# Temporary
-/.next/
+# Tool-owned paths (fixed by the framework, never movable)
 next-env.d.ts
+.vercel
+
+# Build, test and lint artefacts (@jterrazz/typescript)
+.artifacts/
