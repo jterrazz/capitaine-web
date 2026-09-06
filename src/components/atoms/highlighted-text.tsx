@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { mergeClassName } from '../../lib/utils.js'; // Import the CSS file
+import { mergeClassName } from '../../lib/utils'; // Import the CSS file
 
 import styles from './highlighted-text.module.scss';
 

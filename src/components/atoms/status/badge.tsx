@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { mergeClassName } from '../../../lib/utils.js';
+import { mergeClassName } from '../../../lib/utils';
 
 export enum BadgeColor {
     Green,
@@ -33,33 +33,37 @@ export const Badge: React.FC<StatusBadgeProps> = ({
     let generatedClassName = mergeClassName('rounded-md', className);
 
     switch (color) {
-        case BadgeColor.Green:
+        case BadgeColor.Green: {
             generatedClassName = mergeClassName(
                 generatedClassName,
                 'font-medium',
                 filled ? ' bg-olive-note text-olive-note-accent' : ' text-olive-note',
             );
             break;
-        case BadgeColor.Yellow:
+        }
+        case BadgeColor.Yellow: {
             generatedClassName = mergeClassName(
                 generatedClassName,
                 'bg-vanilla-punch text-vanilla-punch-accent',
             );
             break;
-        case BadgeColor.Blue:
+        }
+        case BadgeColor.Blue: {
             generatedClassName = mergeClassName(
                 generatedClassName,
                 'blue-grey blue-grey-accent font-medium',
             );
             break;
-        case BadgeColor.Orange:
+        }
+        case BadgeColor.Orange: {
             generatedClassName = mergeClassName(
                 generatedClassName,
                 'bg-apricot-sunset text-apricot-sunset-accent',
             );
             break;
+        }
         case BadgeColor.Gray:
-        default:
+        default: {
             generatedClassName = mergeClassName(
                 generatedClassName,
                 filled
@@ -67,16 +71,19 @@ export const Badge: React.FC<StatusBadgeProps> = ({
                     : ' text-storm-cloud-accent border-storm-cloud-accent border font-medium',
             );
             break;
+        }
     }
 
     switch (size) {
-        case DotPulseSize.Small:
+        case DotPulseSize.Small: {
             generatedClassName = mergeClassName(generatedClassName, 'px-2.5 py-1 text-xs');
             break;
+        }
         case DotPulseSize.Medium:
-        default:
+        default: {
             generatedClassName = mergeClassName(generatedClassName, 'px-2 py-1 text-sm');
             break;
+        }
     }
 
     return <span className={generatedClassName}>{value}</span>;

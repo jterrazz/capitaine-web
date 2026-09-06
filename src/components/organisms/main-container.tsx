@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { mergeClassName } from '../../lib/utils.js';
+import { mergeClassName } from '../../lib/utils';
 
 type MainContainerProps = {
-    size?: 'medium' | 'full';
+    size?: 'full' | 'medium';
     children: React.ReactNode;
     className?: string;
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { mergeClassName } from '../../lib/utils.js';
+import { mergeClassName } from '../../lib/utils';
 
 export type Link = {
     title: string;
@@ -14,17 +14,17 @@ export type LinkButtonProps = {
 };
 
 export const LinkButton: React.FC<LinkButtonProps> = ({ link, className }) => {
-    // const highlightClassName = highlighted
+    // Const highlightClassName = highlighted
     //     ? 'text-white bg-storm-cloud-accent border-black'
     //     : 'bg-black-and-white-hover border-black-and-white';
     const generatedClassName = mergeClassName(
-        'flex items-center hover:underline', // px-2 py-1 border rounded-lg
-        // highlightClassName,
+        'flex items-center hover:underline', // Px-2 py-1 border rounded-lg
+        // HighlightClassName,
         className,
     );
 
     return (
-        <a key={link.title} href={link.url} target="_blank" className={generatedClassName}>
+        <a className={generatedClassName} href={link.url} key={link.title} target="_blank">
             <p className="text-xs font-semibold">
                 {link.title} {'>'}
             </p>
