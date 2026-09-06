@@ -3,7 +3,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import { mergeClassName } from '../lib/utils.js';
+import { mergeClassName } from '../lib/utils';
 
 import './globals.css';
 

@@ -17,7 +17,6 @@ finished:
 | Identifier                                      | Where                            |
 | ----------------------------------------------- | -------------------------------- |
 | `jterrazz-web`, and the portfolio's description | the npm package (`package.json`) |
-| `jterrazz-web` as the image tag                 | the Makefile                     |
 | "At Life Captain…" as the site description      | `src/app/layout.tsx`             |
 
 The brand's own record of the former names is the glossary in the

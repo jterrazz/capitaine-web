@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { mergeClassName } from '../../../lib/utils.js';
+import { mergeClassName } from '../../../lib/utils';
 
 export type TitleSectionProps = {
     children: React.ReactNode;

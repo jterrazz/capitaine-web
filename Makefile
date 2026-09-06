@@ -1,30 +1,16 @@
-SHELL := /bin/bash
-BASEDIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+.PHONY: build lint test install
 
-# Settings
-NAMESPACE := jterrazz
-TAG := $(NAMESPACE)-web
+node_modules/.install: package-lock.json
+	npm ci
+	@touch node_modules/.install
 
-# Targets (application)
-DOCKER_RUN := docker run
-DOCKER_VOLUMES := -v "$(BASEDIR)/src:/home/src" -v "$(BASEDIR)/__tests__:/home/__tests__"
+install: node_modules/.install
 
-build:
-	docker build . -t $(TAG)
+build: node_modules/.install
+	npm run build
 
-start:
-	$(DOCKER_RUN) $(DOCKER_VOLUMES) $(TAG)
+lint: node_modules/.install
+	npm run lint
 
-dev:
-	$(DOCKER_RUN) $(DOCKER_VOLUMES) -p 3000:3000 $(TAG) npm run dev
-
-test:
-	$(DOCKER_RUN) $(DOCKER_VOLUMES) $(TAG) npm run test
-
-lint:
-	$(DOCKER_RUN) $(DOCKER_VOLUMES) $(TAG) npm run lint
-
-clean:
-	npm run clean && docker rmi $(TAG)
-
-.PHONY: build start dev test lint clean
+test: node_modules/.install
+	npm test
