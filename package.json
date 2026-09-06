@@ -27,7 +27,7 @@
     "devDependencies": {
         "@jterrazz/test": "^14.1.0",
         "@jterrazz/typescript": "^9.0.0",
-        "@types/node": "^20",
+        "@types/node": "^24",
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "postcss": "^8",
@@ -37,6 +37,6 @@
         "vitest": "^4.1.9"
     },
     "engines": {
-        "node": "20.x.x"
+        "node": "24.x.x"
     }
 }
