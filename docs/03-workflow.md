@@ -8,16 +8,23 @@ calls around them.
 | Script             | Does                                              |
 | ------------------ | ------------------------------------------------- |
 | `npm run dev`      | Next dev server on port 3000                      |
-| `npm run build`    | Next production build                             |
+| `npm run build`    | Next production build, into `.artifacts/next`     |
 | `npm run start`    | Serves the build                                  |
 | `npm test`         | Vitest — no suite exists yet, so the run is empty |
 | `npm run lint`     | `typescript check`                                |
 | `npm run lint:fix` | `typescript fix`                                  |
-| `npm run clean`    | Removes the build output and `node_modules`       |
+| `npm run clean`    | Removes `.artifacts/` and `node_modules`          |
 
 `npm run lint` is one command from `@jterrazz/typescript`: types, oxlint,
 oxfmt, the artefact gate and knip in a single pass. What each pass does is
 that package's own documentation, not this chapter's.
+
+## Where output goes
+
+Every build, test and lint artefact lives under `.artifacts/<tool>/` at the
+repository root — the Next build in `.artifacts/next`, the incremental
+buildinfo in `.artifacts/tsc`. Two paths stay where their tool fixes them,
+`next-env.d.ts` and `.vercel`, and the `.gitignore` names nothing else.
 
 ## The two local tsconfig lines
 
