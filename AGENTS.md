@@ -16,16 +16,18 @@ routes; the corpus is `docs/`, and it is not restated here.
   Tailwind cannot express is needed.
 - The tree still carries names from the portfolio scaffold it was copied
   from, and from the product's former name. Read
-  `docs/04-state-and-names.md` before assuming an identifier is a typo.
+  `docs/06-state-and-names.md` before assuming an identifier is a typo.
 
 ## Where knowledge lives
 
 | Working on…                          | Read                         |
 | ------------------------------------ | ---------------------------- |
 | The Next.js app, components, styling | `docs/01-architecture.md`    |
-| The landing page and its copy        | `docs/02-landing-page.md`    |
-| Scripts, the toolchain, the CI       | `docs/03-workflow.md`        |
-| What is built, and the names in code | `docs/04-state-and-names.md` |
+| Scripts, the toolchain, the CI       | `docs/02-developing.md`      |
+| What proves a change                 | `docs/03-testing.md`         |
+| The `Dockerfile`, what running takes | `docs/04-operating.md`       |
+| The landing page and its copy        | `docs/05-landing-page.md`    |
+| What is built, and the names in code | `docs/06-state-and-names.md` |
 | Why a choice was made                | `docs/decisions/`            |
 
 The corpus map is `docs/README.md`. The product knowledge behind the
@@ -45,5 +47,5 @@ npm run lint   # typescript check
 - A change to behaviour updates the matching `docs/` chapter in the same
   change. The chapters are the manual; this brief only points at them.
 - Copy shipped on the landing page is product wording. Changing it changes
-  what the brand claims, so `docs/02-landing-page.md` records the new
+  what the brand claims, so `docs/05-landing-page.md` records the new
   wording in the same change.

@@ -25,4 +25,4 @@ enough to ship it: nothing is wired to receive the address.
 
 The layout's description string is the one piece of copy still under a
 former name — it opens "At Life Captain" (see
-[state and names](04-state-and-names.md)).
+[state and names](06-state-and-names.md)).
